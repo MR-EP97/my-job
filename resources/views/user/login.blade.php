@@ -3,25 +3,13 @@
 @section('content')
 
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Looking for a job</h1>
-                <h3>Please create an account</h3>
-                <img style="" src="{{asset('image/register.png')}}">
-            </div>
-            <div class="col-md-6">
-                <div class="card">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
                     <div class="card-header">
-                        <form action="{{route('store.seeker')}}" method="POST">
+                        <form action="{{route('login.post')}}" method="POSt">
                             @csrf
-                            <div class="body">
-                                <div class="form-group">
-                                    <label for="">Full Name</label>
-                                    <input type="text" name="name" class="form-control">
-                                    @if($errors->has('name'))
-                                        <span class="text-danger">{{$errors->first('name')}}</span>
-                                    @endif
-                                </div>
+                            <div class="card-body">Login</div>
                                 <div class="form-group">
                                     <label for="">Email</label>
                                     <input type="email" name="email" class="form-control">
@@ -36,10 +24,9 @@
                                         <span class="text-danger">{{$errors->first('password')}}</span>
                                     @endif
                                 </div>
-                                <div class="form-group mt-3">
-                                    <button type="submit" class="btn btn-primary">Register</button>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary mt-2">Login</button>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>
